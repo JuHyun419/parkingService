@@ -1,10 +1,11 @@
 package domain;
 
 import java.time.Instant;
+import java.time.ZoneOffset;
 
 public class ParkingTime {
     // 입차 시간
-    private Instant entryTime;
+    private Instant entryTime = Instant.now();
     // 출차 시간
     private Instant departureTime;
 
@@ -22,5 +23,10 @@ public class ParkingTime {
 
     public void setDepartureTime(Instant departureTime) {
         this.departureTime = departureTime;
+    }
+
+    public int getParkingTime(){
+        departureTime = Instant.now();
+        return departureTime.atZone(ZoneOffset.UTC).getMinute() - entryTime.atZone(ZoneOffset.UTC).getMinute();
     }
 }

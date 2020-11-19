@@ -4,6 +4,11 @@ public class ParkingExit {
     private String carNumber;
     private Long settlement;
 
+    public ParkingExit(String carNumber, Long settlement){
+        this.carNumber = carNumber;
+        this.settlement = settlement;
+    }
+
     public String getCarNumber() {
         return carNumber;
     }
