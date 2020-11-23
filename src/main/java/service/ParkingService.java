@@ -41,6 +41,7 @@ public class ParkingService {
         Long settlement = settlementService.getSettlement(carInfo.getCarType(), parkingTime.getParkingTime());
 
         parkingExitList.add(new ParkingExit(carNumber, settlement));
+        System.out.println("settlement = " + settlement);
 
     }
 
@@ -74,5 +75,6 @@ public class ParkingService {
         throw new Exception("The value is not valid.\n" +
                 "Please re-enter.");
     }
+
 
 }

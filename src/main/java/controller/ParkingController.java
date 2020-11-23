@@ -19,7 +19,11 @@ public class ParkingController {
         }
 
     }
+
     // TODO: 출차
+    public void exitCar(String carNumber) throws Exception {
+        parkingService.exitCar(carNumber);
+    }
 
     // TODO: 정산
 

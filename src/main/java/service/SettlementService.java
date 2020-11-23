@@ -12,11 +12,13 @@ public class SettlementService {
 
         int defaultMinute = carFee.getDefaultMinute();
 
-        if(defaultMinute < parkingTime){
-            return parkingTime*carFee.getDefaultFee();
+        if(defaultMinute > parkingTime){
+            System.out.println("parkingTime = " + parkingTime);
+            return carFee.getDefaultFee();
         }
 
         pay += carFee.getDefaultFee();
+        System.out.println("parkingTime = " + parkingTime);
         parkingTime -= defaultMinute;
         pay += (parkingTime/carFee.getExtraMinute())*carFee.getExtraFee();
 
