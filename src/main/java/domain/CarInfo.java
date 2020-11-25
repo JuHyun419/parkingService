@@ -2,9 +2,15 @@ package domain;
 
 import domain.enums.CarTypeEnum;
 
+
+/*
+* 차량을 인터페이스로 만들어 각각의 차량에서 정산 계산식을 작성..?
+*
+* */
 public class CarInfo {
+
     private CarTypeEnum carType;
-    private int capacity;
+    private double capacity;
     private ParkingTime parkingTime = new ParkingTime();
 
     public CarInfo(CarTypeEnum carType, int capacity){
@@ -20,11 +26,11 @@ public class CarInfo {
         this.carType = carType;
     }
 
-    public int getCapacity() {
+    public double getCapacity() {
         return capacity;
     }
 
-    public void setCapacity(int capacity) {
+    public void setCapacity(double capacity) {
         this.capacity = capacity;
     }
 

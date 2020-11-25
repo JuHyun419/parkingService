@@ -1,12 +1,16 @@
-package service;
+package util;
 
 import domain.enums.CarFeeEnum;
 import domain.enums.CarTypeEnum;
 
-public class SettlementService {
+public class SettlementUtil {
 
-    // 정산
-    public Long getSettlement(CarTypeEnum carType, int parkingTime){
+    public static Long getSettlement(CarTypeEnum carType, int parkingTime){
+        return getSettlement(carType, parkingTime, 0);
+    }
+
+    // capacity - 전기차 계산용
+    public static Long getSettlement(CarTypeEnum carType, int parkingTime, double capacity){
         CarFeeEnum carFee = carType.getCarFeeEnum();
         Long pay = 0L;
 

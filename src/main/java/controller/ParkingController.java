@@ -11,26 +11,25 @@ public class ParkingController {
 
     // TODO: 입차
     public void innerCar(String type, int capacity, String carNumber) {
-
         try{
             parkingService.innerCar(type, capacity, carNumber);
         }catch (Exception e){
-            System.out.println(e.getMessage()+" Car Number: " + carNumber);
+            System.out.println(e.getMessage() + " Car Number: " + carNumber);
         }
-
     }
 
-    // TODO: 출차
+    // TODO: 출차, 정산
     public void exitCar(String carNumber) throws Exception {
         parkingService.exitCar(carNumber);
     }
-
-    // TODO: 정산
 
     // TODO: 차량 조회
     public Map<String, CarInfo> getCarList(){
         return parkingService.getCarList();
     }
-    // TODO: 수입 조회
 
+    // TODO: 수입 조회
+    public Long getTotalSettlement(){
+        return parkingService.getTotalSettlement();
+    }
 }

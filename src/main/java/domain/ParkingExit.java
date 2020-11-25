@@ -1,27 +1,30 @@
 package domain;
 
-public class ParkingExit {
-    private String carNumber;
-    private Long settlement;
+import java.util.ArrayList;
+import java.util.List;
 
-    public ParkingExit(String carNumber, Long settlement){
-        this.carNumber = carNumber;
-        this.settlement = settlement;
+public class ParkingExit {
+    private List<String> carNumber = new ArrayList<>();
+    private Long totalSettlement = 0L;
+
+    public void add(String carNumber, Long settlement){
+        this.carNumber.add(carNumber);
+        this.totalSettlement += settlement;
     }
 
-    public String getCarNumber() {
+    public List<String> getCarNumber() {
         return carNumber;
     }
 
-    public void setCarNumber(String carNumber) {
+    public void setCarNumber(List<String> carNumber) {
         this.carNumber = carNumber;
     }
 
-    public Long getSettlement() {
-        return settlement;
+    public Long getTotalSettlement() {
+        return totalSettlement;
     }
 
-    public void setSettlement(Long settlement) {
-        this.settlement = settlement;
+    public void setTotalSettlement(Long totalSettlement) {
+        this.totalSettlement = totalSettlement;
     }
 }
