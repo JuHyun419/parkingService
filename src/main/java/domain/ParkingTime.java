@@ -4,9 +4,8 @@ import java.time.Instant;
 import java.time.ZoneOffset;
 
 public class ParkingTime {
-    // 입차 시간
     private Instant entryTime = Instant.now();
-    // 출차 시간
+
     private Instant departureTime;
 
     public Instant getEntryTime() {
@@ -28,5 +27,10 @@ public class ParkingTime {
     public int getParkingTime(){
         departureTime = Instant.now();
         return departureTime.atZone(ZoneOffset.UTC).getMinute() - entryTime.atZone(ZoneOffset.UTC).getMinute();
+    }
+
+    @Override
+    public String toString() {
+        return entryTime.toString();
     }
 }

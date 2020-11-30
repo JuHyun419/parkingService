@@ -41,4 +41,9 @@ public class CarInfo {
     public void setParkingTime(ParkingTime parkingTime) {
         this.parkingTime = parkingTime;
     }
+
+    @Override
+    public String toString() {
+        return carType + "\t" + capacity + "\t" + parkingTime ;
+    }
 }

@@ -5,9 +5,9 @@ import java.util.List;
 
 public class ParkingExit {
     private List<String> carNumber = new ArrayList<>();
-    private Long totalSettlement = 0L;
+    private double totalSettlement = 0L;
 
-    public void add(String carNumber, Long settlement){
+    public void add(String carNumber, double settlement){
         this.carNumber.add(carNumber);
         this.totalSettlement += settlement;
     }
@@ -20,11 +20,11 @@ public class ParkingExit {
         this.carNumber = carNumber;
     }
 
-    public Long getTotalSettlement() {
+    public double getTotalSettlement() {
         return totalSettlement;
     }
 
-    public void setTotalSettlement(Long totalSettlement) {
+    public void setTotalSettlement(double totalSettlement) {
         this.totalSettlement = totalSettlement;
     }
 }

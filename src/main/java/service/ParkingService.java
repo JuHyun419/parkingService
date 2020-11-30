@@ -47,7 +47,7 @@ public class ParkingService {
 
         ParkingTime parkingTime = carInfo.getParkingTime();
 
-        Long settlement = SettlementUtil.getSettlement(carInfo.getCarType(), parkingTime.getParkingTime());
+        double settlement = SettlementUtil.getSettlement(carInfo.getCarType(), parkingTime.getParkingTime());
 
         parkingExit.add(carNumber, settlement);
         System.out.println("settlement = " + settlement);
@@ -55,7 +55,7 @@ public class ParkingService {
     }
 
     // TODO: 수익 조회
-    public Long getTotalSettlement(){
+    public double getTotalSettlement(){
         return parkingExit.getTotalSettlement();
     }
 

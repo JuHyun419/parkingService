@@ -3,7 +3,7 @@ package util;
 import domain.enums.CarTypeEnum;
 
 public class EnumUtil {
-    // TODO: 차종 선택
+
     public static CarTypeEnum getCarType(String type, int capacity) throws Exception {
 
         if (type.toUpperCase().equals("C")) {
