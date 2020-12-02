@@ -47,8 +47,13 @@ public class ParkingService {
 
         ParkingTime parkingTime = carInfo.getParkingTime();
 
-        double settlement = SettlementUtil.getSettlement(carInfo.getCarType(), parkingTime.getParkingTime());
+        double settlement;
 
+        if( carInfo.getCarType().equals(CarTypeEnum.CAR_ELECTRIC) ){
+            settlement = SettlementUtil.getSettlementElectric(carInfo.getCarType(), parkingTime.getParkingTime(), carInfo.getCapacity());
+        }else {
+            settlement = SettlementUtil.getSettlement(carInfo.getCarType(), parkingTime.getParkingTime());
+        }
         parkingExit.add(carNumber, settlement);
         System.out.println("settlement = " + settlement);
 
